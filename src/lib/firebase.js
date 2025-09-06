@@ -1,14 +1,23 @@
-// ضع هنا إعدادات Firebase الخاصة بك
+// Import Firebase
 import { initializeApp } from "firebase/app";
+import { getAuth } from "firebase/auth";
+import { getFirestore } from "firebase/firestore";
+import { getStorage } from "firebase/storage";
 
+// Firebase Config (من Firebase Console)
 const firebaseConfig = {
-  apiKey: "YOUR_API_KEY",
-  authDomain: "YOUR_AUTH_DOMAIN",
-  projectId: "YOUR_PROJECT_ID",
-  storageBucket: "YOUR_STORAGE_BUCKET",
-  messagingSenderId: "YOUR_MESSAGING_SENDER_ID",
-  appId: "YOUR_APP_ID"
+  apiKey: "AIzaSyDtquB9cTaNk9cU9n-Hv5Jc41bX3CidG7g",
+  authDomain: "chat-cmd-app-f3f06.firebaseapp.com",
+  projectId: "chat-cmd-app-f3f06",
+  storageBucket: "chat-cmd-app-f3f06.appspot.com",
+  messagingSenderId: "143760168908",
+  appId: "1:143760168908:web:REPLACE_THIS_WITH_WEB_APP_ID" 
 };
 
+// Initialize Firebase
 const app = initializeApp(firebaseConfig);
-export default app;
+
+// Export services
+export const auth = getAuth(app);
+export const db = getFirestore(app);
+export const storage = getStorage(app);
